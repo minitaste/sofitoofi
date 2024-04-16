@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+    <h1 class="text-white text-6xl text-center">SofiTufi</h1>
+    <div class="mt-6 px=6 py=12">
+        <h2 class="mb-12 text-2xl text-center">Популярні рейси</h2>
+
+        <div class="flex justify-between">
+            {% for flight in flights %}
+                <div>
+                    <a href="{% url 'flight:detail' flight.id %}">
+                        <h2 class="text-2xl">{{ flight.start }} {{ flight.finish }}</h2>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
